@@ -21,14 +21,14 @@ ext_modules = [
     ]
 
 setup(
-    name="pickle5",
+    name="pickle5-wheels",
     version="0.0.11",
-    author="Antoine Pitrou",
-    author_email="antoine@python.org",
-    description="Backport of the pickle 5 protocol (PEP 574) and other pickle changes",
+    author="Siyuan Zhuang",
+    author_email="suquark@gmail.com",
+    description="Backport of the pickle 5 protocol (PEP 574) and other pickle changes [with prebuilt wheels]",
     long_description=long_description,
     long_description_content_type="text/x-rst",
-    url="https://github.com/pitrou/pickle5-backport",
+    url="https://github.com/suquark/pickle5-backport",
     packages=find_packages(),
     ext_modules=ext_modules,
     classifiers=[
