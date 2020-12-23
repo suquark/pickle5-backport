@@ -60,14 +60,14 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -U wheel setuptools cibuildwheel numpy
 
-      - name: Test
-        run: |
-          python setup.py install
-          mkdir temp
-          cd temp
-          python -m pickle5.test.test_picklebuffer -v
-          python -m pickle5.test.test_pickle
-          cd ..
+      # - name: Test
+      #   run: |
+      #     python setup.py install
+      #     mkdir temp
+      #     cd temp
+      #     python -m pickle5.test.test_picklebuffer -v
+      #     python -m pickle5.test.test_pickle
+      #     cd ..
 
       - name: Build wheels
         env:
