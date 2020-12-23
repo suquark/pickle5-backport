@@ -58,7 +58,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
-        run: python -m pip install -U wheel setuptools numpy
+        run: python -m pip install -U wheel setuptools auditwheel numpy
 
       - name: Test
         run: |
@@ -70,7 +70,9 @@ jobs:
           cd ..
 
       - name: Build wheels
-        run: python setup.py bdist_wheel
+        run: |
+          python setup.py bdist_wheel
+          python -m auditwheel repair ./dist/*.whl
 
       - uses: actions/upload-artifact@v2
         with:
