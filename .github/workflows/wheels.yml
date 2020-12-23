@@ -71,10 +71,11 @@ jobs:
 
       - name: Build wheels
         run: |
-          python setup.py bdist_wheel
-          python -m auditwheel repair ./dist/*.whl
+          python -m pip install cibuildwheel
+          python -m cibuildwheel --output-dir wheelhouse
+          python -m auditwheel repair ./wheelhouse/*.whl
 
       - uses: actions/upload-artifact@v2
         with:
           name: dist
-          path: ./dist/*.whl
+          path: ./wheelhouse/*.whl
